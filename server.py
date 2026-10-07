@@ -15,8 +15,8 @@ def sent_detector():
     and returns the emotion scores and the dominant emotion,
     or an error message for invalid input.
     """
-    text_to_analyze = request.args.get('textToAnalyze')
-    response = emotion_detector(text_to_analyze)
+    text_to_analyse = request.args.get('textToAnalyse')
+    response = emotion_detector(text_to_analyse)
     anger = response['anger']
     disgust = response['disgust']
     fear = response['fear']
@@ -24,7 +24,7 @@ def sent_detector():
     sadness = response['sadness']
     dominant_emotion = response['dominant_emotion']
     if dominant_emotion is None:
-        return "Invalid text! Please try again!"
+        return "Invalid input! Try again."
     return (
         f"For the given statement, the system response is 'anger': {anger}, "
         f"'disgust': {disgust}, 'fear': {fear}, 'joy': {joy} and "
